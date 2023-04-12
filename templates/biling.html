@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+       {% load static %}
+    <link rel="stylesheet" href="{% static 'css/biling.css' %}">
+    <style>
+        #field1{
+            width: 30%;
+
+        }
+        #field2{
+            width: 25%;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            width:90%;
+            box-sizing: content-box;
+        }
+        #d1{
+            background-color: white;
+            box-sizing: border-box;
+
+        }
+        #main{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+<a href="{% url 'back' %}" style="padding: 30px">Go to background images</a>
+<a href="{% url 'hello' %}" style="padding: 30px">Go to hello page</a>
+<div id="main">
+<fieldset id="field1">
+<form id="f1">
+
+
+    <div id="d1">
+         <h3>Biling details</h3>
+        <hr>
+    <input type="text" placeholder="First name">
+    <input type="text" placeholder="Last name"> <br> <br>
+    <input type="text" placeholder="Company name"> <br> <br>
+    <input type="text" placeholder="Address"> <br> <br>
+    <input type="email" placeholder="Email"> <br><br>
+    <input type="tel" placeholder="Phone"> <br><br>
+    <textarea name="addinfo" id="" cols="30" rows="5" placeholder="Additional information"></textarea> <br><br><br>
+
+    <input type="checkbox" id="check">Create an account? <br><br>
+    </div>
+    </fieldset>
+
+<fieldset id="field2">
+
+<form action="" id="f2">
+    <div id="d2">
+        <h3 style="padding-right: 50px">Summary</h3>
+        <hr>
+        <p>Products <span style="padding: 60px">$53.98</span></p>
+        <p>Shipping <span style="padding: 60px">Gratis</span></p>
+        <hr>
+        <p>Total amount  <span style="padding: 30px">$53.98</span></p><p> (including VAT) </p>
+    <button type="submit">MAKE PURCHASE</button>
+    </div>
+</form>
+    </fieldset>
+</form>
+</div>
+
+</body>
+</html>
