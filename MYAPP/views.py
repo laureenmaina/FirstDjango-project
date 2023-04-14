@@ -20,3 +20,29 @@ def Student(request):
 def Employee(request):
     emp=EmployeeForm()
     return render(request,'employee.html',{'form':emp})
+def Employee(request):
+  if request.method=='post':
+      form=EmployeeForm(request.post)
+      if form.is_valid():
+          form.save()
+          return redirect("/")
+  else :
+      form=EmployeeForm()
+      return render(request,'employee.html',{'form':form})
+
+def setsession(request):
+    request.session['firstname']='Laurine'
+    request.session['lastname']='Maina'
+    request.session['Email']='mainalaureen58@gmail.com'
+    return HttpResponse('Session has been successfully created')
+def getsession(request):
+    fname=request.session['firstname']
+    lname=request.session['lastname']
+    emailaddress= request.session['Email']
+    return HttpResponse(fname+' '+lname+' '+emailaddress)
+
+def form(request):
+    return render (request,"form.html")
+
+def forms(request):
+    return render (request,"form2.html")
